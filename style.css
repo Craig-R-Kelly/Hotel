@@ -1,13 +1,17 @@
 /* -------  General Styles ------- */
+main img {
+  width: 100%;
+}
 
 body {
   font-family: "Lato", sans-serif;
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 30px; /* was 26 */
   font-weight: 400;
-  margin: 0 10px 10px 10px;
+  margin: 0px 10px 0px 10px;
+  /*margin: 10px 10px 10px 10px;*/
   text-align: center;
 }
 
@@ -16,22 +20,34 @@ h3 {
   font-weight: 500;
 }
 
+header li {
+  font-size: 24px;
+}
+
 p {
-  line-height: 1.5em;
-  margin: 0;
+  line-height: 1.25em; /* was 1.5  */
 }
 
 section {
-  padding: 20px;
-}
+  padding: 20px 20px 20px 20px;
+} /* T R B L */
 
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
 }
 
-main img {
-  width: 100px;
+.alternate-background .group {
+  display: flex;
+  flex-direction: column;
+}
+
+.alternate-background .item {
+  flex:1;
+}
+
+alternative-background .item-double {
+  flex:2;
 }
 
 /* ---  Groups & Items --- */
@@ -42,8 +58,23 @@ main img {
 }
 
 .item {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  margin: 10px ;
+}
+
+.flex-grid .item {
+  width: 100%;
+}
+
+.item label {
   flex: 1;
-  margin: 10px;
+}
+
+.item input, .item select {
+  flex: 1.5; /* 2 looked like a bit much */
+  height: 25px;
 }
 
 .item-double {
@@ -54,7 +85,7 @@ main img {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 1px 20px; /* 3rd param was 0 */
   text-align: center;
 }
 
@@ -64,6 +95,11 @@ header {
   color: #fff;
 }
 
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+
 header nav ul li {
   list-style-type: none;
 }
@@ -71,7 +107,7 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0px 10px 0px 10px;
 }
 
 header nav ul li a:hover {
@@ -82,17 +118,18 @@ header nav ul li a:hover {
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 0px;
+  margin: 10px;
 }
 
-form label {
+form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 5;
+}
+
+form label, form input, form select{
   font-weight: bold;
-}
-
-form select,
-form input {
-  margin-bottom: 20px;
-  width: 180px;
 }
 
 form button {
@@ -114,6 +151,61 @@ footer p {
   color: #fff;
   text-align: center;
   padding: 20px;
+  margin:0;
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 768px) {
+
+  
+  header {  
+    padding: 20px 20px 20px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  fieldset .group {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+  } 
+
+  .item input, 
+  .item select, 
+  .item button{
+    width: calc(100px + ((100vw - 768px) / 7))}
+    /* Input boxes and button cannot be set to any wider than 100px and still fit in the fieldset at 768px vw.  As viewport widens to 4K, any leftover pixels are distributed to elements and spaces between them, respectively, at a 2:1 ratio. */ 
+ 
+  .flex-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .flex-grid .item {
+    width: calc(100vw / 2 - 74px); 
+  }
+  /* the above calculation works all the way to 4Kpx vw */
+
+   alternate-background {
+    display: flex;
+  }
+
+  .alternate-background .item {
+    flex:1;
+  }
+
+  .alternate-background .group {
+    display: flex;
+    flex-direction: row;   /* see if some of these can go */
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  
+  .alternate-background .group .item h2 {font-size: 18px};
+  
+  .alternate-background .group .item ul li {font-size: 4px};
+ 
+ }

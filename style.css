@@ -1,3 +1,16 @@
+/*********************************************************/
+/*                      Craig Kelly                      */
+/*        Thinkful Engineering Flex, 4.1.9 (22.9)        */
+/*         Assessment: Frontend foundations, v2.         */
+/* This reflects human grader's requested changes to v1. */
+/*             Revisions submitted 10-8-23.              */
+/*********************************************************/
+/*
+I made alterations to CSS on 10-7, which fixed one problem but created another.
+More alterations 10-8 undid that.  It should all be working now.  
+Especially after seeing how Bootstrap applies classes, but also after having made these minor tweaks to this particular past assignment on 10-7 and 10-8, I have a much better understanding of how to make and apply my own classes.  This particular assignment had been done largely "by feel" and without full understanding. I realize that the HTML is a little screwy and the CSS is a true mess, but the webpage appears OK now and I need to move on to the next unit.
+*/
+
 /* -------  General Styles ------- */
 main img {
   width: 100%;
@@ -58,10 +71,17 @@ alternative-background .item-double {
 }
 
 .item {
-  display: flex;
-  flex-direction: column; 
+  /* display: flex; */
+  /* change made 10-7 : made direction row instead of column.  But then that threw off titles in the Ideas section and rows vs cols in the Host section */
+  /* commented out `.item`'s flex display on 10-8.  That undid these problems but then labels and inputs inside fieldset were no longer justified with space between, so I added the rule following this one */
+  flex-direction: row; 
   justify-content: space-between; 
   margin: 10px ;
+}
+
+/*added 10-8 to fix problems created yesterday*/
+form fieldset .group .item {
+  display: flex;
 }
 
 .flex-grid .item {
@@ -89,9 +109,10 @@ header {
   text-align: center;
 }
 
-.logo {
+/* This was a part of the code which my human grader asked me to change.  He said that at around 375px my logo font overflowed the available space.  So I changed this on 10-7, adding a rule for logo font size in the media query section that makes the original 72px font size now only kick in with larger screens, and I reduced it here to a size which works on very narrow screens */ 
+.logo { 
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 60px;
   color: #fff;
 }
 
@@ -104,10 +125,11 @@ header nav ul li {
   list-style-type: none;
 }
 
+/* while I was at it on 10-7 I also tinkered with li padding to get list centered at all screen widths.  I couldn't, though, and I think this is because of the offset from (now-invisible) bullet points.  List items which looked centered under 60px logo at narrowest possible screen width (320px) are already visibly misaligned by the time you hit 350px.  It's not the logo that off; it's the unordered list. */
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 0px;
 }
 
 header nav ul li a:hover {
@@ -154,10 +176,14 @@ footer p {
   margin:0;
 }
 
-/* -------  Media Query ------- */
+/*******************************Media Query*********************/
 @media all and (min-width: 768px) {
 
-  
+   /* moved this down here on 10-7 */
+  .logo {
+    font-size: 72px;
+    }
+
   header {  
     padding: 20px 20px 20px 20px; 
     display: flex; 
@@ -165,11 +191,19 @@ footer p {
     align-items: center; 
   }
 
-  fieldset .group {
+
+
+fieldset .group { 
     display: flex;
     flex-direction:row;
     justify-content: space-between;
   } 
+
+  /* change made 10-7 */
+  fieldset .group .item {
+    display: flex;
+    flex-direction:column;
+  }
 
   .item input, 
   .item select, 
@@ -198,7 +232,7 @@ footer p {
 
   .alternate-background .group {
     display: flex;
-    flex-direction: row;   /* see if some of these can go */
+    flex-direction: row;   
     justify-content: center;
     flex-flow: row nowrap;
     align-items: center;
@@ -208,4 +242,5 @@ footer p {
   
   .alternate-background .group .item ul li {font-size: 4px};
  
+  
  }

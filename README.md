@@ -6,4 +6,4 @@ This was an exercise in duplicating the mobile and desktop versions of a vacatio
 * Clicking navigation links takes the user to corresponding sections within the same page.
 
 ### Link
-* Here it is, running on [Github Pages}()
+* Here it is, running on [GitHub Pages](https://craig-r-kelly.github.io/Vacation-Rentals/).

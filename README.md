@@ -1,6 +1,7 @@
 # Vacation Rentals
 
-This was an exercise in duplicating the mobile and desktop versions of a vacation rental sites's landing page using HTML and CSS, and in the use of forms and input fields.  It doesn't "do" anything.  
+This was an exercise in duplicating the mobile and desktop versions of a vacation rental sites's landing page using HTML and CSS.  It doesn't "do" anything.  
+* Various forms and input fields appear, according to specifications.
 * Desired layouts and image sizes were achieved using flexbox.
 * This page is responsive to differing screen witdths and was designed with a  mobile-first development approach.  A media query in the CSS stylesheet applies modified formatting to screens wider than 768px.
 * Clicking navigation links takes the user to corresponding sections within the same page.
@@ -10,7 +11,8 @@ This was an exercise in duplicating the mobile and desktop versions of a vacatio
 
 ## Screen shots
 
-### 720px width mobile view:
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/Craig-R-Kelly/Vacation-Rentals/edit/main/screenshots/screenshot1.png)
+### Mobile view (720px width):
+![Screenshot of the 720px-wide mobile view of the `Vacation Rentals` app](screenshots/screenshot2.png)
 
-### 1280px width desktop view:
+### Desktop view (1280px width):
+![Screenshot of the 1280px-wide desktop view of the `Vacation Rentals` app](screenshots/screenshot1.png)

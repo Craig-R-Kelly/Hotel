@@ -11,6 +11,6 @@ This was an exercise in duplicating the mobile and desktop versions of a vacatio
 ## Screen shots
 
 ### 720px width mobile view:
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/Craig-R-Kelly/Vacation-Rentals/edit/main/screenshots/screenshot1.png)
 
 ### 1280px width desktop view:
